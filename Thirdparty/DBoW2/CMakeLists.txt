@@ -25,6 +25,8 @@ set(SRCS_DUTILS
   DUtils/Timestamp.cpp)
 
 find_package(OpenCV REQUIRED)
+find_package(Qt5Core)
+find_package(Qt5Widgets)
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
