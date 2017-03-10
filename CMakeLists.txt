@@ -1,6 +1,16 @@
 cmake_minimum_required(VERSION 2.8)
 project(ORB_SLAM2)
 
+# Build external libraries (+ see but don't move 'add_dependencies')
+add_custom_target(liDBoW2 ALL cmake CMakeLists.txt
+    COMMAND make
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2
+)
+add_custom_target(lig2o ALL cmake CMakeLists.txt
+    COMMAND make
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/Thirdparty/g2o
+)
+
 IF(NOT CMAKE_BUILD_TYPE)
   SET(CMAKE_BUILD_TYPE Release)
 ENDIF()
@@ -64,6 +74,10 @@ src/Sim3Solver.cc
 src/Initializer.cc
 src/Viewer.cc
 )
+
+# Add external libraries as dependencies in order to build them first
+add_dependencies(${PROJECT_NAME} libDBoW2
+    libg2o)
 
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
