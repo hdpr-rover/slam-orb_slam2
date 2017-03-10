@@ -6,3 +6,17 @@ Examples/Monocular/mono_tum
 Examples/Stereo/stereo_kitti
 Examples/RGB-D/rgbd_tum
 Thirdparty/g2o/config.h
+
+*.swp
+Thirdparty/DBoW2/CMakeCache.txt
+Thirdparty/DBoW2/CMakeFiles/
+Thirdparty/DBoW2/Makefile
+Thirdparty/DBoW2/cmake_install.cmake
+Thirdparty/DBoW2/src/
+Thirdparty/DBoW2/tmp/
+Thirdparty/g2o/CMakeCache.txt
+Thirdparty/g2o/CMakeFiles/
+Thirdparty/g2o/Makefile
+Thirdparty/g2o/cmake_install.cmake
+Thirdparty/g2o/src/
+Thirdparty/g2o/tmp/
